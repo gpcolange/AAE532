@@ -11,8 +11,8 @@ GMAT Sat.DateFormat = UTCGregorian;
 GMAT Sat.Epoch = '30 Oct 2024 11:59:28.000';
 GMAT Sat.CoordinateSystem = EarthMJ2000Eq;
 GMAT Sat.DisplayStateType = Keplerian;
-GMAT Sat.SMA = 6633.261751999999;
-GMAT Sat.ECC = 1.182441227245583e-16;
+GMAT Sat.SMA = 114806.4534;
+GMAT Sat.ECC = 2.558166116637079e-16;
 GMAT Sat.INC = 0;
 GMAT Sat.RAAN = 0;
 GMAT Sat.AOP = 0;
@@ -62,8 +62,8 @@ GMAT Sat_Moon.DateFormat = UTCGregorian;
 GMAT Sat_Moon.Epoch = '30 Oct 2024 11:59:28.000';
 GMAT Sat_Moon.CoordinateSystem = EarthMJ2000Eq;
 GMAT Sat_Moon.DisplayStateType = Keplerian;
-GMAT Sat_Moon.SMA = 6633.261751999999;
-GMAT Sat_Moon.ECC = 1.182441227245583e-16;
+GMAT Sat_Moon.SMA = 114806.4534;
+GMAT Sat_Moon.ECC = 2.558166116637079e-16;
 GMAT Sat_Moon.INC = 0;
 GMAT Sat_Moon.RAAN = 0;
 GMAT Sat_Moon.AOP = 0;
@@ -79,7 +79,7 @@ GMAT Sat_Moon.AtmosDensityScaleFactor = 1;
 GMAT Sat_Moon.ExtendedMassPropertiesModel = 'None';
 GMAT Sat_Moon.NAIFId = -10001001;
 GMAT Sat_Moon.NAIFIdReferenceFrame = -9001001;
-GMAT Sat_Moon.OrbitColor = Red;
+GMAT Sat_Moon.OrbitColor = [128 255 0];
 GMAT Sat_Moon.TargetColor = Teal;
 GMAT Sat_Moon.OrbitErrorCovariance = [ 1e+70 0 0 0 0 0 ; 0 1e+70 0 0 0 0 ; 0 0 1e+70 0 0 0 ; 0 0 0 1e+70 0 0 ; 0 0 0 0 1e+70 0 ; 0 0 0 0 0 1e+70 ];
 GMAT Sat_Moon.CdSigma = 1e+70;
@@ -113,8 +113,8 @@ GMAT Sat_MoonSun.DateFormat = UTCGregorian;
 GMAT Sat_MoonSun.Epoch = '30 Oct 2024 11:59:28.000';
 GMAT Sat_MoonSun.CoordinateSystem = EarthMJ2000Eq;
 GMAT Sat_MoonSun.DisplayStateType = Keplerian;
-GMAT Sat_MoonSun.SMA = 6633.261751999999;
-GMAT Sat_MoonSun.ECC = 1.182441227245583e-16;
+GMAT Sat_MoonSun.SMA = 114806.4534;
+GMAT Sat_MoonSun.ECC = 2.558166116637079e-16;
 GMAT Sat_MoonSun.INC = 0;
 GMAT Sat_MoonSun.RAAN = 0;
 GMAT Sat_MoonSun.AOP = 0;
@@ -130,7 +130,7 @@ GMAT Sat_MoonSun.AtmosDensityScaleFactor = 1;
 GMAT Sat_MoonSun.ExtendedMassPropertiesModel = 'None';
 GMAT Sat_MoonSun.NAIFId = -10001001;
 GMAT Sat_MoonSun.NAIFIdReferenceFrame = -9001001;
-GMAT Sat_MoonSun.OrbitColor = Red;
+GMAT Sat_MoonSun.OrbitColor = [0 255 255];
 GMAT Sat_MoonSun.TargetColor = Teal;
 GMAT Sat_MoonSun.OrbitErrorCovariance = [ 1e+70 0 0 0 0 0 ; 0 1e+70 0 0 0 0 ; 0 0 1e+70 0 0 0 ; 0 0 0 1e+70 0 0 ; 0 0 0 0 1e+70 0 ; 0 0 0 0 0 1e+70 ];
 GMAT Sat_MoonSun.CdSigma = 1e+70;
@@ -154,6 +154,8 @@ GMAT Sat_MoonSun.AttitudeDisplayStateType = 'Quaternion';
 GMAT Sat_MoonSun.AttitudeRateDisplayStateType = 'AngularVelocity';
 GMAT Sat_MoonSun.AttitudeCoordinateSystem = EarthMJ2000Eq;
 GMAT Sat_MoonSun.EulerAngleSequence = '321';
+
+
 
 
 
@@ -270,14 +272,14 @@ Create OrbitView DefaultOrbitView;
 GMAT DefaultOrbitView.SolverIterations = Current;
 GMAT DefaultOrbitView.UpperLeft = [ 0 0 ];
 GMAT DefaultOrbitView.Size = [ 0.8 0.8501228501228502 ];
-GMAT DefaultOrbitView.RelativeZOrder = 148;
-GMAT DefaultOrbitView.Maximized = true;
+GMAT DefaultOrbitView.RelativeZOrder = 4;
+GMAT DefaultOrbitView.Maximized = false;
 GMAT DefaultOrbitView.Add = {Sat, Sat_Moon, Sat_MoonSun, Earth};
 GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
 GMAT DefaultOrbitView.DrawObject = [ true true true true ];
 GMAT DefaultOrbitView.DataCollectFrequency = 1;
 GMAT DefaultOrbitView.UpdatePlotFrequency = 50;
-GMAT DefaultOrbitView.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView.NumPointsToRedraw = 1;
 GMAT DefaultOrbitView.ShowPlot = true;
 GMAT DefaultOrbitView.MaxPlotPoints = 20000;
 GMAT DefaultOrbitView.ShowLabels = true;
@@ -298,14 +300,27 @@ GMAT DefaultOrbitView.StarCount = 7000;
 GMAT DefaultOrbitView.EnableStars = Off;
 GMAT DefaultOrbitView.EnableConstellations = Off;
 
+Create ReportFile ReportFile1;
+GMAT ReportFile1.SolverIterations = Current;
+GMAT ReportFile1.UpperLeft = [ 0.1129411764705882 0.2358722358722359 ];
+GMAT ReportFile1.Size = [ 0.5994117647058823 0.7985257985257985 ];
+GMAT ReportFile1.RelativeZOrder = 77;
+GMAT ReportFile1.Maximized = false;
+GMAT ReportFile1.Filename = 'ReportFile1.txt';
+GMAT ReportFile1.Precision = 16;
+GMAT ReportFile1.Add = {Sat.Earth.TA, Sat_Moon.Earth.TA, Sat_MoonSun.Earth.TA};
+GMAT ReportFile1.WriteHeaders = true;
+GMAT ReportFile1.LeftJustify = On;
+GMAT ReportFile1.ZeroFill = Off;
+GMAT ReportFile1.FixedWidth = true;
+GMAT ReportFile1.Delimiter = ' ';
+GMAT ReportFile1.ColumnWidth = 23;
+GMAT ReportFile1.WriteReport = true;
+
 
 %----------------------------------------
 %---------- Mission Sequence
 %----------------------------------------
 
 BeginMissionSequence;
-Propagate 'InitialOrbit' EarthPointModel(Sat) {Sat.ElapsedSecs = 5376.5, OrbitColor = [255 255 0]};
-Maneuver HohmannBurn1(Sat);
-Propagate 'TransferOrbit' EarthPointModel(Sat) {Sat.ElapsedSecs = 74452.1255975339, OrbitColor = [255 128 64]};
-Maneuver HohmannBurn2(Sat);
-Propagate 'FinalOrbit' EarthPointModel(Sat) {Sat.ElapsedSecs = 387133.213060295, OrbitColor = [0 255 255]};
+Propagate 'SSalphaOrbit' EarthPointModel(Sat) EarthMoon(Sat_Moon) EarthMoonSun(Sat_MoonSun) {Sat.ElapsedSecs = 3871332.13060295, Sat_Moon.ElapsedSecs = 3871332.13060295, Sat_MoonSun.ElapsedSecs = 3871332.13060295};
