@@ -12,8 +12,8 @@ GMAT DefaultSC.Epoch = '13 Nov 2024 11:59:28.000';
 GMAT DefaultSC.CoordinateSystem = EarthMJ2000Eq;
 GMAT DefaultSC.DisplayStateType = Keplerian;
 GMAT DefaultSC.SMA = 34100.92675247532;
-GMAT DefaultSC.ECC = 0.2545875386086671;
-GMAT DefaultSC.INC = 45.00000000000002;
+GMAT DefaultSC.ECC = 0.2545875386086673;
+GMAT DefaultSC.INC = 45.00000000000003;
 GMAT DefaultSC.RAAN = 60.00000000000001;
 GMAT DefaultSC.AOP = 349.1066053508662;
 GMAT DefaultSC.TA = 10.89339464913383;
@@ -54,6 +54,7 @@ GMAT DefaultSC.AttitudeCoordinateSystem = EarthMJ2000Eq;
 GMAT DefaultSC.EulerAngleSequence = '321';
 
 
+
 %----------------------------------------
 %---------- ForceModels
 %----------------------------------------
@@ -91,9 +92,9 @@ GMAT DefaultProp.StopIfAccuracyIsViolated = true;
 
 Create OrbitView DefaultOrbitView;
 GMAT DefaultOrbitView.SolverIterations = Current;
-GMAT DefaultOrbitView.UpperLeft = [ 0.001176470588235294 -0.1068796068796069 ];
+GMAT DefaultOrbitView.UpperLeft = [ 0.000588235294117647 -0.1056511056511057 ];
 GMAT DefaultOrbitView.Size = [ 0.8 0.8501228501228502 ];
-GMAT DefaultOrbitView.RelativeZOrder = 16;
+GMAT DefaultOrbitView.RelativeZOrder = 41;
 GMAT DefaultOrbitView.Maximized = false;
 GMAT DefaultOrbitView.Add = {DefaultSC, Earth};
 GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
@@ -145,3 +146,4 @@ GMAT ReportFile1.WriteReport = true;
 
 BeginMissionSequence;
 Propagate DefaultProp(DefaultSC) {DefaultSC.ElapsedSecs = 17342.2595681442};
+Propagate DefaultProp(DefaultSC) {DefaultSC.ElapsedSecs = 45327.8210624118, OrbitColor = [255 128 64]};
