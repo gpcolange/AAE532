@@ -17,10 +17,16 @@ out.s           = (r1 + r2 + out.c)/2;
 out.a_min       = out.s/2;
 a_min           = out.a_min;
 
+TOF_par         = (1/3)*sqrt(2/mu)*(out.s^(3/2) - (out.s - out.c)^(3/2));
+
+if TOF_des <= TOF_par
+    error('Parabolic Transfer Needed')
+end
+
 % Minimum Energy beta
 out.beta_min    = 2*asin(sqrt((out.s-out.c)/(2*out.a_min)));
 
-% Calculate parabolic TOF
+% Calculate Minimum energy TOF
 out.TOF_min     = sqrt(out.a_min^3/mu)*(pi - sin(pi) - (out.beta_min - sin(out.beta_min)));
 
 % Determine orbit type
@@ -39,7 +45,7 @@ else
 end
 
 % Choose initial max sma
-a_max           = 2*out.s;
+a_max           = 10*out.s;
 
 % Initialize TOF 
 TOF             = 0;
@@ -73,11 +79,18 @@ while (abs(TOF  - TOF_des) > 1e-3)
     % Lambert Equation
     TOF     = sqrt(a^3/mu)*((alpha - beta) - (sin(alpha) - sin(beta)));
 
-    % Change a 
-    if TOF < TOF_des
-        a_min = a;
+    if strcmpi(out.type,'1B') || strcmpi(out.type,'2B')
+        if TOF < TOF_des
+            a_min = a;
+        else
+            a_max = a;
+        end
     else
-        a_max = a;
+        if TOF > TOF_des
+            a_min = a;
+        else
+            a_max = a;
+        end
     end
 
     % Increment counter 
