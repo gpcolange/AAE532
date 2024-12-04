@@ -53,7 +53,7 @@ TOF             = 0;
 % Initialize counter
 count           = 0;
 
-while (abs(TOF  - TOF_des) > 1e-3) 
+while (abs(TOF  - TOF_des) > 1e-6) 
 
     % Choose initial max sma
     a       = (a_min + a_max)/2;
