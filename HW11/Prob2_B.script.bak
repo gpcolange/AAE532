@@ -59,6 +59,7 @@ GMAT DefaultSC.EulerAngleSequence = '321';
 
 
 
+
 %----------------------------------------
 %---------- ForceModels
 %----------------------------------------
@@ -158,7 +159,7 @@ GMAT ReportFile1.UpperLeft = [ -0.02705882352941176 0.128992628992629 ];
 GMAT ReportFile1.Size = [ 0.5823529411764706 0.7628992628992629 ];
 GMAT ReportFile1.RelativeZOrder = 72;
 GMAT ReportFile1.Maximized = true;
-GMAT ReportFile1.Filename = 'Prob2b.txt';
+GMAT ReportFile1.Filename = 'HW11_2_B.txt';
 GMAT ReportFile1.Precision = 16;
 GMAT ReportFile1.Add = {DefaultSC.Earth.RMAG, DefaultSC.EarthMJ2000Eq.X, DefaultSC.EarthMJ2000Eq.Y, DefaultSC.EarthMJ2000Eq.Z, DefaultSC.EarthMJ2000Eq.VMAG, DefaultSC.EarthMJ2000Eq.VX, DefaultSC.EarthMJ2000Eq.VY, DefaultSC.EarthMJ2000Eq.VZ, DefaultSC.ElapsedSecs, DefaultSC.Earth.TA, DefaultSC.EarthMJ2000Eq.FPA, DefaultSC.EarthMJ2000Eq.INC, DefaultSC.EarthMJ2000Eq.AOP, DefaultSC.EarthMJ2000Eq.RAAN, DefaultSC.Earth.ECC, DefaultSC.Earth.SMA};
 GMAT ReportFile1.WriteHeaders = true;

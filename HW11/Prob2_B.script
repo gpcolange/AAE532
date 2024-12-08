@@ -60,6 +60,8 @@ GMAT DefaultSC.EulerAngleSequence = '321';
 
 
 
+
+
 %----------------------------------------
 %---------- ForceModels
 %----------------------------------------
@@ -99,9 +101,9 @@ Create ImpulsiveBurn Departure;
 GMAT Departure.CoordinateSystem = Local;
 GMAT Departure.Origin = Earth;
 GMAT Departure.Axes = VNB;
-GMAT Departure.Element1 = -1.1974;
-GMAT Departure.Element2 = 2.5756;
-GMAT Departure.Element3 = -6.0744;
+GMAT Departure.Element1 = -1.19735708177656;
+GMAT Departure.Element2 = 2.57556368188633;
+GMAT Departure.Element3 = -6.07442303820928;
 GMAT Departure.DecrementMass = false;
 GMAT Departure.Isp = 300;
 GMAT Departure.GravitationalAccel = 9.81;
@@ -110,9 +112,9 @@ Create ImpulsiveBurn Arrival;
 GMAT Arrival.CoordinateSystem = Local;
 GMAT Arrival.Origin = Earth;
 GMAT Arrival.Axes = VNB;
-GMAT Arrival.Element1 = 1.1643;
-GMAT Arrival.Element2 = -0.8197;
-GMAT Arrival.Element3 = -0.3861;
+GMAT Arrival.Element1 = 1.16433361013375;
+GMAT Arrival.Element2 = -0.819748282654742;
+GMAT Arrival.Element3 = -0.386073067914542;
 GMAT Arrival.DecrementMass = false;
 GMAT Arrival.Isp = 300;
 GMAT Arrival.GravitationalAccel = 9.81;
@@ -125,7 +127,7 @@ Create OrbitView DefaultOrbitView;
 GMAT DefaultOrbitView.SolverIterations = Current;
 GMAT DefaultOrbitView.UpperLeft = [ 0 0 ];
 GMAT DefaultOrbitView.Size = [ 0.8 0.8501228501228502 ];
-GMAT DefaultOrbitView.RelativeZOrder = 57;
+GMAT DefaultOrbitView.RelativeZOrder = 12;
 GMAT DefaultOrbitView.Maximized = false;
 GMAT DefaultOrbitView.Add = {DefaultSC, Earth};
 GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
@@ -169,6 +171,78 @@ GMAT ReportFile1.FixedWidth = true;
 GMAT ReportFile1.Delimiter = ' ';
 GMAT ReportFile1.ColumnWidth = 23;
 GMAT ReportFile1.WriteReport = true;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView2;
+GMAT DefaultOrbitView2.SolverIterations = Current;
+GMAT DefaultOrbitView2.UpperLeft = [ 0 0 ];
+GMAT DefaultOrbitView2.Size = [ 0.8 0.8501228501228502 ];
+GMAT DefaultOrbitView2.RelativeZOrder = 12;
+GMAT DefaultOrbitView2.Maximized = false;
+GMAT DefaultOrbitView2.Add = {DefaultSC, Earth};
+GMAT DefaultOrbitView2.CoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView2.DrawObject = [ true true ];
+GMAT DefaultOrbitView2.DataCollectFrequency = 1;
+GMAT DefaultOrbitView2.UpdatePlotFrequency = 50;
+GMAT DefaultOrbitView2.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView2.ShowPlot = true;
+GMAT DefaultOrbitView2.MaxPlotPoints = 20000;
+GMAT DefaultOrbitView2.ShowLabels = true;
+GMAT DefaultOrbitView2.ViewPointReference = Earth;
+GMAT DefaultOrbitView2.ViewPointVector = [ 0 175000 175000 ];
+GMAT DefaultOrbitView2.ViewDirection = Earth;
+GMAT DefaultOrbitView2.ViewScaleFactor = 1;
+GMAT DefaultOrbitView2.ViewUpCoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView2.ViewUpAxis = Z;
+GMAT DefaultOrbitView2.EclipticPlane = Off;
+GMAT DefaultOrbitView2.XYPlane = On;
+GMAT DefaultOrbitView2.WireFrame = Off;
+GMAT DefaultOrbitView2.Axes = On;
+GMAT DefaultOrbitView2.Grid = Off;
+GMAT DefaultOrbitView2.SunLine = Off;
+GMAT DefaultOrbitView2.UseInitialView = On;
+GMAT DefaultOrbitView2.StarCount = 7000;
+GMAT DefaultOrbitView2.EnableStars = Off;
+GMAT DefaultOrbitView2.EnableConstellations = On;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView3;
+GMAT DefaultOrbitView3.SolverIterations = Current;
+GMAT DefaultOrbitView3.UpperLeft = [ 0 0 ];
+GMAT DefaultOrbitView3.Size = [ 0.8 0.8501228501228502 ];
+GMAT DefaultOrbitView3.RelativeZOrder = 12;
+GMAT DefaultOrbitView3.Maximized = false;
+GMAT DefaultOrbitView3.Add = {DefaultSC, Earth};
+GMAT DefaultOrbitView3.CoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView3.DrawObject = [ true true ];
+GMAT DefaultOrbitView3.DataCollectFrequency = 1;
+GMAT DefaultOrbitView3.UpdatePlotFrequency = 50;
+GMAT DefaultOrbitView3.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView3.ShowPlot = true;
+GMAT DefaultOrbitView3.MaxPlotPoints = 20000;
+GMAT DefaultOrbitView3.ShowLabels = true;
+GMAT DefaultOrbitView3.ViewPointReference = Earth;
+GMAT DefaultOrbitView3.ViewPointVector = [ 175000 0 0 ];
+GMAT DefaultOrbitView3.ViewDirection = Earth;
+GMAT DefaultOrbitView3.ViewScaleFactor = 1;
+GMAT DefaultOrbitView3.ViewUpCoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView3.ViewUpAxis = Z;
+GMAT DefaultOrbitView3.EclipticPlane = Off;
+GMAT DefaultOrbitView3.XYPlane = On;
+GMAT DefaultOrbitView3.WireFrame = Off;
+GMAT DefaultOrbitView3.Axes = On;
+GMAT DefaultOrbitView3.Grid = Off;
+GMAT DefaultOrbitView3.SunLine = Off;
+GMAT DefaultOrbitView3.UseInitialView = On;
+GMAT DefaultOrbitView3.StarCount = 7000;
+GMAT DefaultOrbitView3.EnableStars = Off;
+GMAT DefaultOrbitView3.EnableConstellations = On;
 
 
 %----------------------------------------

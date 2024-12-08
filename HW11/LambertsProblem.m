@@ -17,7 +17,11 @@ out.s           = (r1 + r2 + out.c)/2;
 out.a_min       = out.s/2;
 a_min           = out.a_min;
 
-TOF_par         = (1/3)*sqrt(2/mu)*(out.s^(3/2) - (out.s - out.c)^(3/2));
+if TA > 180
+   TOF_par  = (1/3)*sqrt(2/mu)*(out.s^(3/2) + (out.s - out.c)^(3/2));
+else
+   TOF_par  = (1/3)*sqrt(2/mu)*(out.s^(3/2) - (out.s - out.c)^(3/2));
+end
 
 if TOF_des <= TOF_par
     error('Parabolic Transfer Needed')
